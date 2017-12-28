@@ -1,12 +1,12 @@
 MvcExtraControls - Helpfull extensions to System.Web.Mvc.HtmlHelper.
 --------------------------------------------------------------------
 
-ListEditorFor method creates an editor to add, remove and change elements in a list on the view model.
+ListEditorFor method creates an editor to add, remove and change elements in a list on the view model with full binding.
 
-[nuget.org/packages/PeterPalmer.MvcExtraControls](https://www.nuget.org/packages/PeterPalmer.MvcExtraControls)
+[NuGet package](https://www.nuget.org/packages/MvcExtraControls.ListEditor)
 
-Example usage
--------------
+* * *
+### Example usage
 
 ###### View model:
 ```csharp
