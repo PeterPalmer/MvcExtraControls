@@ -1,0 +1,29 @@
+﻿@model MvcExtraControls.ExampleNet46.Models.ViewModel
+@using MvcExtraControls.Library;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MvcExtraControls - Example</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/js")
+</head>
+<body>
+    <strong>MvcExtraControls - Example</strong>
+    <br />
+    <br />
+
+    @using (Html.BeginForm())
+    {
+        <small>Model.StringList</small>
+        @Html.ListEditorFor(m => m.StringList)
+        <br />
+        <small>Model.NestedModel.StringList</small>
+        @Html.ListEditorFor(m => m.NestedModel.StringList, new { @class = "form-control" }, "Ta bort", "Lägg till")
+        <br />
+        <input type="submit" value="post" />
+    }
+
+</body>
+</html>
