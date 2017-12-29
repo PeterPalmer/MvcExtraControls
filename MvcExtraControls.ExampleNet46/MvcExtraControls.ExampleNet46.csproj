@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Views\Home\Example.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MvcExtraControls.Library\MvcExtraControls.Library.csproj">
