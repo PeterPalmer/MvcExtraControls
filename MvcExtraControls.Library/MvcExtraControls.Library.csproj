@@ -47,19 +47,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="MvcExtraControls.Library.nuspec" />
+    <None Include="MvcExtraControls.Library.nuspec">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="..\MvcExtraControls.ExampleNet46\Content\ListEditor.css">
-      <Link>content\Content\ListEditor.css</Link>
+      <Link>Content\ListEditor.css</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="..\MvcExtraControls.ExampleNet46\Scripts\ListEditor.js">
-      <Link>content\Scripts\ListEditor.js</Link>
+      <Link>Scripts\ListEditor.js</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="MvcExtraControls.png" />
+    <None Include="MvcExtraControls.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

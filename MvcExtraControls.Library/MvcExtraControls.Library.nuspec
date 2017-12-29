@@ -1,16 +1,17 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>MvcExtraControls.Library</id>
+    <id>MvcExtraControls.ListEditor</id>
     <version>1.0.0</version>
     <title>MvcExtraControls</title>
     <authors>Peter Palmér</authors>
     <owners>Peter Palmér</owners>
     <licenseUrl>http://opensource.org/licenses/MS-PL</licenseUrl>
     <projectUrl>https://github.com/PeterPalmer/MvcExtraControls</projectUrl>
-    <iconUrl>https://github.com/PeterPalmer/MvcExtraControls/blob/master/MvcExtraControls.Library/MvcExtraControls.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/PeterPalmer/MvcExtraControls/master/MvcExtraControls.Library/MvcExtraControls.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Helpfull extensions to System.Web.Mvc.HtmlHelper. ListEditorFor-extension creates an editor to add, remove and change elements in a list on the view model.</description>
+    <description>Helpfull extensions to System.Web.Mvc.HtmlHelper.
+Method ListEditorFor creates an editor to add, remove and change elements in a list on the view model.</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>ASP.NET MVC String Strings List Collection Control</tags>
