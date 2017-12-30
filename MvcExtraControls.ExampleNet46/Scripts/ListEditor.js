@@ -50,3 +50,15 @@ function ListEditor(id, elementsCount, inputCssClass, removeText, removeClass) {
 		}
 	}
 }
+
+var listEditors = {};
+
+document.addEventListener('DOMContentLoaded', function () {
+	var ulElements = document.getElementsByClassName('ListEditor');
+	for (var i = 0; i < ulElements.length; i++) {
+		var ul = ulElements[i];
+
+		var listEditor = new ListEditor(ul.id, ul.dataset.elementscount, ul.dataset.inputcssclass, ul.dataset.removetext, ul.dataset.removeclass);
+		listEditors[ul.id] = listEditor;
+	}
+}, false);

@@ -8,6 +8,7 @@ using System.Web.Mvc.Html;
 
 namespace MvcExtraControls.Library
 {
+    /// <summary>Extensions methods for ListEditor</summary>
     public static class ListEditorExtensions
     {
         /// <summary>
@@ -104,13 +105,19 @@ namespace MvcExtraControls.Library
             }
 
             var editorId = GetEditorId(expressionText);
-            var builder = new StringBuilder($"<ul id='{editorId}' name='{expressionText}' class='ListEditor'>\r\n");
+            var inputCssClass = GetCssClass(htmlAttributes);
+
             var elementsCount = stringList.Count();
+            var builder = new StringBuilder($"<ul id='{editorId}' name='{expressionText}' class='ListEditor' ");
+            builder.Append($"data-elementscount='{elementsCount}' ");
+            builder.Append($"data-inputcssclass='{inputCssClass}' ");
+            builder.Append($"data-removetext='{removeText}' ");
+            builder.Append($"data-removeclass='{removeClass}'>\r\n");
 
             for (int i = 0; i < elementsCount; i++)
             {
                 var htmlTextbox = htmlHelper.TextBox($"{expressionText}[{i}]", stringList[i], htmlAttributes);
-                var removeSpan = $"<span class='{removeClass}' onclick='{editorId}.Remove(this)'>{removeText}</span>";
+                var removeSpan = $"<span class='{removeClass}' onclick='listEditors[\"{editorId}\"].Remove(this)'>{removeText}</span>";
                 builder.AppendLine($"<li>{htmlTextbox}{removeSpan}</li>");
             }
 
@@ -125,10 +132,7 @@ namespace MvcExtraControls.Library
                 addClass = String.Concat(addClass.Trim(), " addItem");
             }
 
-            builder.AppendLine($"<div class='{addClass}' onclick='{editorId}.AddItem()'>{addText}</div>");
-
-            var inputCssClass = GetCssClass(htmlAttributes);
-            builder.AppendLine($"<script>{editorId} = new ListEditor('{editorId}', {elementsCount}, '{inputCssClass}', '{removeText}', '{removeClass}');</script>");
+            builder.AppendLine($"<div class='{addClass}' onclick='listEditors[\"{editorId}\"].AddItem()'>{addText}</div>");
 
             return new MvcHtmlString(builder.ToString());
         }
