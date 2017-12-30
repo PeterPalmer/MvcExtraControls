@@ -19,6 +19,7 @@ ListEditorFor method creates an editor to add, remove and change elements in a l
 
 ###### View:
 ```Html
+@using MvcExtraControls.Library;
 <html>
   <head>
     <script src="/Scripts/ListEditor.js"></script>
