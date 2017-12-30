@@ -8,7 +8,7 @@ ListEditorFor method creates an editor to add, remove and change elements in a l
 * * *
 ### Example usage
 
-###### View model:
+###### Model:
 ```csharp
     [Bind(Include = "StringList")]
     public class ViewModel
@@ -19,6 +19,7 @@ ListEditorFor method creates an editor to add, remove and change elements in a l
 
 ###### View:
 ```Html
+@using MvcExtraControls.Library;
 <html>
   <head>
     <script src="/Scripts/ListEditor.js"></script>
@@ -29,3 +30,19 @@ ListEditorFor method creates an editor to add, remove and change elements in a l
   </body>
 </html>
 ```
+
+###### Controller:
+```csharp
+public ActionResult Index()
+{
+  var model = new ViewModel()
+  {
+    StringList = new List<string> { "One", "Two", "Three" }
+  };
+
+  return View(model);
+}
+```
+
+###### Result:
+![Result](https://raw.githubusercontent.com/PeterPalmer/MvcExtraControls/master/Example.png)
