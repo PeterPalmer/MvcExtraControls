@@ -1,4 +1,3 @@
-
 function ListEditor(id, elementsCount, inputCssClass, removeText, removeClass) {
 	this.elementsCount = elementsCount;
 	this.list = document.getElementById(id);
@@ -38,7 +37,8 @@ function ListEditor(id, elementsCount, inputCssClass, removeText, removeClass) {
 
 			var remove = document.createElement('span');
 			remove.className = this.removeClass;
-			remove.onclick = function () { this.Remove(remove) };
+			var editorId = this.list.id;
+			remove.onclick = function () { listEditors[editorId].Remove(remove) };
 			remove.textContent = this.removeText;
 
 			listItem.appendChild(input);
